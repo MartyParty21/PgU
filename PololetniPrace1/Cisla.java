@@ -5,7 +5,6 @@ public class Cisla
 	private int[][] seznamCisel = new int[1][2];
 	private int[][] serazenePole = new int[1][2];
 	private int[][] serazeneCetnosti = new int[1][2];
-	// private int[] cetnost = new int[1];
 	private int pocetCisel;
 	private boolean duplikovatelna;
 
@@ -26,11 +25,7 @@ public class Cisla
     	{
          	seznamCisel = zvetsi(seznamCisel, seznamCisel.length * 2);
         }   
-     //    if (pocetCisel == cetnost.length && !duplikovatelna) 
-    	// {
-     //     	cetnost = zvetsi(cetnost, cetnost.length * 2);
-     //    }
-
+        //V pripade ze se cisla v poli mohou opakovat
         if(duplikovatelna)
         {
         	seznamCisel[pocetCisel][0] = cislo;
@@ -41,39 +36,35 @@ public class Cisla
 			if(pocetCisel == 0)
 			{
 				seznamCisel[pocetCisel][0] = cislo;
-				// cetnost[pocetCisel]++;
+				seznamCisel[pocetCisel][1]++;
 				pocetCisel++;
 			}
 			else
 			{
 				for(int i = 0; i < pocetCisel; i++)
 				{
-					if(cislo == seznamCisel[i][0])
+					if(cislo == seznamCisel[i][0])//Pokud jiz cislo bylo zadano
 					{
 						seznamCisel[i][1]++;
 						break;
 					}
-					if(i + 1 == pocetCisel)
+					if(i + 1 == pocetCisel)//Pokud cislo nebylo zadano
 					{
 						seznamCisel[i + 1][0] = cislo;
 						pocetCisel++;
 					}
 				}
 			}			
-			serazeneCetnosti = seradDleCetnosti(seznamCisel, pocetCisel);
+			serazeneCetnosti = seradDleCetnosti(seznamCisel, pocetCisel); //serazeni vsech prvku podle cetnosti
 		}
-		serazenePole = seradPrvky(seznamCisel, pocetCisel);
+		serazenePole = seradPrvky(seznamCisel, pocetCisel); //serazeni vsech prvku podle velikosti
 	}
 
+	//*Ziskani seznamu cisel s cetnosti v poradi zadavani, pole je delsi nez je prvku
 	public int[][] ziskejPrvky()
 	{
 		return seznamCisel;
 	}
-
-	// public int ziskejCetnost(int index)
-	// {
-	// 	return cetnost[index];
-	// }
 
 	public int ziskejPocetPrvku()
 	{
@@ -100,24 +91,27 @@ public class Cisla
 		return seznamCisel[index][1];
 	}
 
-// 	private int[][] seradPrvky(int[][] pole, int pocetCisel)
-// 	{
-// 		int[][] serazenePole = new int[pocetCisel][2];
-// 		for (int i = 0; i < pocetCisel; i++) 
-//         {
-//             serazenePole[i][0] = pole[i][0];
-//             serazenePole[i][1] = pole[i][1];
+	public int ziskejPrvekDleVelikosti(int index)
+	{
+		return serazenePole[index][0];
+	}
 
-//         }
+	public int ziskejCetnostDleVelikosti(int index)
+	{
+		return serazenePole[index][1];
+	}
 
-//         Arrays.sort(serazenePole, new java.util.Comparator<int[]>() {
-//     	public int compare(int[] a, int[] b) {
-//         return Integer.compare(a[0], b[0]);
-//     }
-// });
-// 		return serazenePole;
-// 	}
+	public int ziskejPrvekDleCetnosti(int index)
+	{
+		return serazeneCetnosti[index][0];
+	}
 
+	public int ziskejCetnostDleCetnosti(int index)
+	{
+		return serazeneCetnosti[index][1];
+	}
+
+	//*Vraci pole o velikosti poctu zadanych prvku
 	private int[][] orizniPole(int[][] pole, int pocetCisel)
 	{
 		int[][] oriznutePole = new int[pocetCisel][2];
@@ -130,6 +124,7 @@ public class Cisla
         return oriznutePole;
 	}
 
+	//*Seradi elementy 2d pole podle [x][0] - velikosti cisel
 	private int[][] seradPrvky(int[][] pole, int pocetCisel)
 	{
 		int[][]serazenePole = orizniPole(pole, pocetCisel);
@@ -141,6 +136,7 @@ public class Cisla
 		return serazenePole;
 	}
 
+	//*Seradi elementy 2d pole podle [x][1] - cetnosti
 	private int[][] seradDleCetnosti(int[][] pole, int pocetCisel)
 	{
 		int[][]serazeneCetnosti = orizniPole(pole, pocetCisel);
