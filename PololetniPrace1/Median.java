@@ -12,17 +12,17 @@ public class Median
 			cis.zapocitej(sc.nextInt());
         }
 
-        int[] cisla = cis.ziskejSerazenePrvky();
+        int[][] cisla = cis.ziskejSerazenePrvky();
 
         double median;
         int pocetCisel = cis.ziskejPocetPrvku();
         switch(pocetCisel % 2)
         {
         	case 0:
-        		median = (double)(cisla[pocetCisel/2] + cisla[pocetCisel/2 - 1]) / 2;
+        		median = (double)(cis.ziskejPrvek(pocetCisel/2) + cis.ziskejPrvek(pocetCisel/2 - 1)) / 2;
         		break;
         	default:
-        		median = cisla[pocetCisel/2];
+        		median = cis.ziskejPrvek(pocetCisel/2);
         }
         System.out.printf("Median zadanych cisel je %.1f\n", median);
 	}
