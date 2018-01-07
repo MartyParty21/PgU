@@ -1,11 +1,17 @@
 package cz.alisma.alej.prog.rokyta.pololetniprace1;
 
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Graf
 {
 	public static void main(String args[])
 	{
+		System.out.println("Zadejte cisla:");
+		String file = System.getProperty("user.dir") + "/graf.svg";
+
 		int pole[] = new int[100];
 		int maximum = 0;
 		int pocet = 0;
@@ -39,7 +45,16 @@ public class Graf
 		}
 		vystup += "</svg>";
 
-		System.out.println(vystup);
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) 
+		{
+			bw.write(vystup);
+
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+
+		System.out.println("Graf byl vygenerovan do soouboru graf.svg v momentalni pracovni slozce.");
 	}
 
 	private static String pridejSloupecek(int velikost, int poradi)

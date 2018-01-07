@@ -14,9 +14,9 @@ public class CetnostCisel
 			cis.zapocitej(sc.nextInt());
 		}
 
-		if(cis.ziskejPocetPrvku == 0)
+		if(cis.ziskejPocetPrvku() == 0)
 		{
-			System.println("Nezadali jste zadne cislo!");
+			System.out.println("Nezadali jste zadne cislo!");
 		}
 		else
 		{

@@ -28,6 +28,6 @@ public class Elipsa
 
 	 private static boolean jeVElipse(int x, int y, int a, int b) 
 	{
-        return x*x*b*b + y*y*a*a <= a*a*b*b;
+        return x*x*b*b + y*y*a*a < a*a*b*b;
     }
 }
