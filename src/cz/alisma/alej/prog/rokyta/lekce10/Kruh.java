@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.lekce10;
+
 import java.util.Scanner;
 
 public class Kruh

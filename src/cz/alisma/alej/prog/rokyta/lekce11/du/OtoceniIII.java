@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.lekce11.du;
+
 import java.util.Scanner;
 
 public class OtoceniIII

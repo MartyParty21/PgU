@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.lekce11;
+
 import java.util.Scanner;
 
 public class Cetnost
@@ -7,7 +9,7 @@ public class Cetnost
 		int[] cisla = new int[500];
 		Scanner sc = new Scanner(System.in);
 		int pocet = 0;
-		Cisla
+		//Cisla
 
 		while(sc.hasNextInt())
 		{
@@ -15,17 +17,17 @@ public class Cetnost
 			pocet++;
 		}
 
-		Cisla num = new Cisla()
+		//Cisla num = new Cisla()
 
 		for(int i = 0; i <= pocet; i++)
 		{
-			Cisla num = new Cisla(cisla[i]);
+			//Cisla num = new Cisla(cisla[i]);
 			for(int j = 0; j <= pocet; j++)
 			{
-				if (num.hodnota == cisla[j])
-				{
-					num.pocet++;	
-				}
+//				if (num.hodnota == cisla[j])
+//				{
+//					num.pocet++;	
+//				}
 			}
 		}
 	}

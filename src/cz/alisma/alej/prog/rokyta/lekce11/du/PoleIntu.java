@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.lekce11.du;
+
 public class PoleIntu 
 {
 	private int[] pole = new int[1];

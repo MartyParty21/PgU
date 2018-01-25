@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.vanocnihra;
+
 public class SouctyMocnin{
 	public static void main(String[] args)
 	{

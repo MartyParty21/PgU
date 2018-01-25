@@ -12,7 +12,7 @@ public class OtoceniII
 
 		while(sc.hasNextInt())
 		{
-			if(maxIndex == cisla.length())
+			//if(maxIndex == cisla.length())
 			{
 				
 			}

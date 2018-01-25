@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.lekce11.du;
+
 public class Cetnosti
 {
 	private int[] seznamCisel = new int[1];

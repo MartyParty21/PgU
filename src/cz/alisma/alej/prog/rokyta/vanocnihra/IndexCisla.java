@@ -1,20 +1,22 @@
-import java.util.Scanner
+package cz.alisma.alej.prog.rokyta.vanocnihra;
+
+import java.util.Scanner;
 
 public class IndexCisla{
 	public static void main(String[] args)
 	{
 		int pocetCisel = 0;
 		int[] cisla = new int[500];
-		Scanner sc = new Scanner(System.in())
+		Scanner sc = new Scanner(System.in);
 		
 		while(sc.hasNextInt())
 		{
-			if(pocet == cisla.length)
+			if(pocetCisel == cisla.length)
 			{
 				cisla = zvetsi(cisla, cisla.length * 2);
 			}
-			cisla[pocet] = sc.nextInt();
-			pocet++;
+			cisla[pocetCisel] = sc.nextInt();
+			pocetCisel++;
 		}
 
 

@@ -1,3 +1,5 @@
+package cz.alisma.alej.prog.rokyta.lekce11.du;
+
 import java.util.Scanner;
 
 public class Cisla
@@ -29,6 +31,6 @@ public class Cisla
 			}
 		}
 
-		System.out.println(prvky[nejpocetjnejsi]);
+		System.out.println(prvky[nejpocetnejsi]);
 	}
 }
